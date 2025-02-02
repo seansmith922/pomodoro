@@ -21,8 +21,10 @@ const BREAK_TIME = 5 * 60; // 5 minutes in seconds
 function updateDisplay() {
     const minutes = Math.floor(timeLeft / 60);
     const seconds = timeLeft % 60;
+    const timeString = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
     minutesDisplay.textContent = minutes.toString().padStart(2, '0');
     secondsDisplay.textContent = seconds.toString().padStart(2, '0');
+    document.title = `${timeString} - Pomodoro Timer`;
 }
 
 function switchMode() {
