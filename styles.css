@@ -1,0 +1,111 @@
+:root {
+  --primary: #FF4F5A;      /* Vibrant coral for active states/accents */
+  --secondary: #2D3250;    /* Deep blue-grey for contrast */
+  --background: #F5F5F7;   /* Light grey background */
+  --text: #1D1D1F;        /* Almost black for text */
+  --timer: #FF4F5A;       /* Timer numbers in coral */
+  --button-hover: #FF6B74; /* Lighter coral for hover states */
+}
+
+body {
+  background-color: var(--background);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 20px;
+}
+
+.timer-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.timer-display {
+  font-size: 5rem;
+  font-weight: 700;
+  color: var(--timer);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -2px;
+  margin: 1rem 0;
+}
+
+#mode-text {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--secondary);
+  margin-bottom: 1.5rem;
+}
+
+button {
+  background: var(--secondary);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin: 0.5rem;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+button.active {
+  background: var(--primary);
+}
+
+#start {
+  background: var(--primary);
+}
+
+#start:hover {
+  background: var(--button-hover);
+}
+
+.mode-buttons {
+  margin-top: 1.5rem;
+}
+
+.separator {
+  font-size: 5rem;
+  color: var(--timer);
+  font-weight: 700;
+  margin: 0 0.5rem;
+}
+
+.timer-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.time-adjust {
+  background: var(--secondary);
+  color: white;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.time-adjust:hover {
+  background: var(--primary);
+} 
