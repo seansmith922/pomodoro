@@ -3,6 +3,7 @@ let timerId = null;
 let isWorkTime = true;
 let isRunning = false;
 let currentMinutes = 25;
+let focusText = '';
 
 const minutesDisplay = document.getElementById('minutes');
 const secondsDisplay = document.getElementById('seconds');
@@ -39,6 +40,8 @@ function startTimer() {
         if (timeLeft === undefined) {
             timeLeft = WORK_TIME;
         }
+        
+        // Start the timer
         timerId = setInterval(() => {
             timeLeft--;
             updateDisplay();
@@ -92,6 +95,20 @@ function reset() {
     timeLeft = currentMinutes * 60;
     updateDisplay();
     startButton.textContent = 'Start';
+}
+
+function submitFocus() {
+    const focusInput = document.getElementById('focus-input');
+    const userFocus = focusInput.value.trim();
+    if (userFocus) {
+        focusText = userFocus;
+        document.getElementById('focus-text').textContent = focusText;
+        document.getElementById('focus-display').style.display = 'block';
+        // Remove the modal - fixing the selector to get the outer modal div
+        document.body.removeChild(document.querySelector('div[style*="position: fixed"]'));
+        // Start the timer
+        startTimer();
+    }
 }
 
 startButton.addEventListener('click', startTimer);

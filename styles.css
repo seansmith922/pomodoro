@@ -25,6 +25,7 @@ body {
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   text-align: center;
+  min-width: 320px;
 }
 
 .timer-display {
@@ -108,4 +109,11 @@ button.active {
 
 .time-adjust:hover {
   background: var(--primary);
+}
+
+.focus-display {
+  font-size: 1.1rem;
+  color: var(--secondary);
+  margin-bottom: 1rem;
+  font-weight: 500;
 } 
